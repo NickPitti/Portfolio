@@ -1,0 +1,99 @@
+<!DOCTYPE html><!--i thought const if it only changes when you reload page-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Todolist+Stopwatch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <header style="font-size:24px; text-align:center;">
+            Todolist<b>+</b>Stopwatch
+        </header>
+
+        <main>
+    
+            <div style="text-align: center;">
+                <p id="time">0</p> 
+                <p id="demo">0</p>
+                <button onclick="setInterval(timeCheck,1000)" >Start Seconds Check</button>
+                <button onclick="setInterval(stopWatch,1000)" >Start Stopwatch</button>
+            </div>
+
+            <br>
+            <br>
+           
+        </main>
+
+        <footer>
+            <i>
+            <ul>
+                <li>think of projects for 3 difficulty level</li>
+                <li>open vscode and js documentation(js timing)</li>
+                <li>install live server extension</li>
+                <li>forget to sw posture and get back pain</li>
+                <li>copy pasta timing events in documentation</li>
+                <li>notice that you can display time</li>
+                <li>apply change to display updated time at intervals</li>
+                <li>notice that im doing an object declaration instead of int declaration and thats why my stopwatch doesnt work</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString">args for rtc display</a></li>
+     
+            </ul>
+                </i>
+        </footer>
+
+        <script>
+            setInterval(myTimer, 1000);
+
+            function myTimer() {
+            //why const?
+            const d = new Date();//2 d variables cause errors onclcik???
+            document.getElementById("time").innerHTML = d.toLocaleTimeString('ar-EG','UTC-1');
+            }
+
+            function timeCheck(){
+                d=new Date();
+                document.getElementById("demo").innerHTML=d.getSeconds();
+            }
+
+            function stopWatch(){
+                //i= new Int; wtf is this? a type declaraation or object declaration
+                let i;
+                i=document.getElementById("demo").innerHTML
+                //document.getElementById("demo").innerHTML=i++;
+                //i=document.getElementById("demo").innerHTML.valueOf();  //what is the value attrb again?
+                i++;
+                document.getElementById("demo").innerHTML=parseInt(i);
+            }
+
+            function allChecks(){
+                /*
+                document.getElementById("form").childNodes.checked.
+                switch(val){
+
+                }
+                */
+            }
+
+        </script>
+
+    </body>
+</html>
+
+
+           
+            <!--form id="form">
+                  <input type="radio" id="sec" name="btn_action">
+                  <label>Seconds Check</label><br>
+                  <input type="radio" id="stp" name="btn_action">
+                  <label>Stopwatch</label><br>
+                  <input type="radio" id="cnt" name="btn_action">
+                  <label>Countdown</label><br><br>
+                  <!--input type="submit" value="Submit"-->
+                  <!--same as a btn? only reason to use value attrb?-->
+                  <!--What does 127.0.0.1:<b>5500</b> mean?-->
+            <!--/form--> 
+
+            
